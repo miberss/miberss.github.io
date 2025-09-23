@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.png">
   <title>mibers</title>
 
@@ -18,46 +20,49 @@
       --border: var(--accent-strong);
     }
 
+    @font-face { font-family: IosevkaSS14; src: url('IosevkaSS14.ttf'); } 
 
     body {
       background: var(--background);
       color: var(--foreground);
-      font-family: 'JetBrains Mono', monospace;
-      padding: 0.5ch;
+      font-family: IosevkaSS14;
+      padding: 1ch;
       margin-top: 0ch;
     }
 
     a {
-      color: var(--highlight);
-    }
-    a:hover {
-      text-decoration: underline;
-      color: var(--accent-strong);
+      color: var(--accent-soft);
     }
 
-    h1, h2 {
-      color: var(--accent);
-      text-decoration: underline;
-      margin-bottom: -0.5ch;
-      margin-top: 0.5ch;
-      
+    a:hover {
+      color: var(--highlight);
     }
+
     h1 {
-      margin-top: 0ch;
-      margin-bottom: 0ch;
+      color: var(--accent);
+      margin-top: 0lh;
+      margin-bottom: 0lh;
+      text-decoration: underline;
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-top: 0.25lh;
+      margin-bottom: -0.25lh;
     }
 
     h3 {
       color: var(--warning);
-      margin-top: -0.5ch;
-      margin-bottom: -0.5ch;
+      margin-top: 0lh;
+      margin-bottom: 0lh;
     }
-    p, ul, ol {
-      margin-top: 2ch;
-      margin-bottom: 2ch;
-      
-      max-width: 100ch;
-      line-height: 2ch;
+
+    p,
+    ul {
+      margin-top: 0.5lh;
+      margin-bottom: 0lh;
+      max-width: 60ch;
+      line-height: 110%;
     }
 
     ul {
@@ -65,72 +70,100 @@
     }
 
     p {
-      margin-top: 1ch;
-      margin-bottom: 1ch;
+      margin-top: 0.5lh;
+      margin-bottom: 0.5lh;
     }
 
     ul li::marker {
-      content: "-> ";
       color: var(--accent-strong);
+      content: "-> ";
     }
+
     .label {
       color: var(--warning);
       font-weight: bold;
     }
-    .tui-label {
+
+    .extra-info {
       color: var(--accent-strong);
+      font-style: italic;
+    }
+
+    .email {
+      color: var(--accent-strong);
+      margin-top: 0.2lh;
+      margin-bottom: -0.2lh;
       font-style: italic;
     }
   </style>
 </head>
+
 <body>
   <h1>mibers</h1>
-  <a href="https://en.pronouns.page/@mibers" target="_blank">she/her</a>,
-  <a href="https://github.com/miberss" target="_blank">developer</a>,
-  student,
-  furry
-  <h2>Summary</h2>
+  <p class="email">(its@mibers.uk)</p>
   <p>
-    Creative and driven developer focused on building expressive tools
-    for Minecraft and game development. Strong interest in scripting,
-    system design, and community-led environments. Seeking opportunities
-    that embrace creativity, collaboration, and clean code.
+    <a href="https://en.pronouns.page/@mibers" target="_blank">she/her</a>,
+    <a href="https://github.com/miberss" target="_blank">developer</a>,
+    student,
+    furry
   </p>
-  <h2>Projects</h2>
+
+  <h2>Summary:</h2>
+  <ul>
+    <p>
+      Recreational programmer focused on building tooling and games
+      for Minecraft. Strong interest in scripting, system design,
+      and FOSS. Happy to collaborate on projects
+      that embrace creativity, community and clean code.
+    </p>
+  </ul>
+
+  <h2>Projects:</h2>
   <ul>
     <li>
-      <h3><span class="label">CRAFT-8</span></h3>
-      <p>A game creator server for Minecraft.</p>
+      <h3><a href="https://github.com/miberss/CRAFT-8" target="_blank">CRAFT-8</a></h3>
+      <p>A fantasy console for Minecraft.</p>
     </li>
     <li>
-      <h3><span class="label">BOTS</span></h3>
-      <p>A fast-paced Cold War roguelike built in Minecraft.</p>
+      <h3><a href="https://github.com/miberss/bots" target="_blank">BOTS</a></h3>
+      <p>A fast-paced Cold War Minecraft arcade game made in 7 days.</p>
     </li>
   </ul>
-  <h2>Experience</h2>
+
+  <h2>Experience:</h2>
   <ul>
     <li>
-      <h3>Moderator — Minekeep</h3>
-      <p class="tui-label">2024 - Present</p>
-      <p>Moderated high-traffic Minecraft servers, enforced rules, dealt with tickets.</p>
+      <h3>Moderator - Minekeep</h3>
+      <p class="extra-info">2024 - Present</p>
+      <p>Moderated high-traffic Minecraft servers, enforced rules, dealt with tickets and hosted 'Server Jams'.</p>
     </li>
     <li>
-      <h3>Developer — Freelance</h3>
-      <p class="tui-label">2023 - Present</p>
+      <h3>Developer - Freelance</h3>
+      <p class="extra-info">2023 - Present</p>
       <p>Built interpreters, games, and tooling for Minecraft servers.</p>
     </li>
   </ul>
-  <h2>Skills</h2>
+
+  <h2>Skills:</h2>
   <ul>
-    <li><span class="label">Languages:</span> Skript, Kotlin, Lua, Java</li>
-    <li><span class="label">Tools:</span> Git, VSCodium, Lite XL</li>
-    <li><span class="label">Soft skills:</span> Documentation, Dynamic Design, problem solving</li>
+    <li>
+      <span class="label">Languages:</span> Skript, Kotlin, Lua, Java, Go
+    </li>
+    <li>
+      <span class="label">Tools:</span> git, VSCode, Lite XL
+    </li>
+    <li>
+      <span class="label">Soft skills:</span> documentation, dynamic design, problem solving
+    </li>
   </ul>
-  <h2>Interests</h2>
+
+  <h2>Interests:</h2>
   <ul>
     <li><span class="label">Music:</span> Rap, Neo-Soul, RnB, Hip-hop</li>
     <li><span class="label">Cartoons:</span> Adventure Time, Regular Show, We Bare Bears</li>
     <li><span class="label">Videogames:</span> Minecraft, Terraria, Bloons, Brawlhalla, THE FINALS, Balatro</li>
   </ul>
+
 </body>
+
 </html>
