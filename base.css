@@ -1,0 +1,101 @@
+:root {
+    --background: #1E222AF9;
+    --foreground: #D8DEE9;
+    --accent-soft: #b48ead;
+    --accent: #88C0D0;
+    --accent-strong: #81A1C1;
+    --highlight: #A3BE8C;
+    --warning: #EBCB8B;
+    --border: var(--accent-strong);
+}
+
+@font-face { font-family: IosevkaSS14; src: url('IosevkaSS14.ttf'); } 
+
+html {
+    background: linear-gradient(var(--background)), url(assets/frutiger_metro.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+body {
+    color: var(--foreground);
+    font-family: IosevkaSS14;
+    padding: 0ch;
+    margin-top: 1ch;
+}
+
+a {
+    color: var(--accent-soft);
+}
+
+a:hover {
+    color: var(--highlight);
+}
+
+h1 {
+    color: var(--accent);
+    margin-top: 0lh;
+    margin-bottom: 0lh;
+    text-decoration: underline;
+}
+
+h2 {
+    color: var(--accent);
+    margin-top: 0.25lh;
+    margin-bottom: -0.25lh;
+}
+
+h3 {
+    color: var(--warning);
+    margin-top: 0lh;
+    margin-bottom: 0lh;
+}
+
+p,
+ul {
+    margin-top: 0.5lh;
+    margin-bottom: 0lh;
+    max-width: 60ch;
+    line-height: 110%;
+}
+
+ul {
+    margin-left: -1ch;
+}
+
+p {
+    margin-top: 0.5lh;
+    margin-bottom: 0.5lh;
+}
+
+ul li::marker {
+    color: var(--accent-strong);
+    content: "-> ";
+}
+
+.label {
+    color: var(--warning);
+    font-weight: bold;
+}
+
+.extra-info {
+    color: var(--accent-strong);
+    font-style: italic;
+}
+
+.email {
+    color: var(--accent-strong);
+    margin-top: 0.2lh;
+    margin-bottom: -0.2lh;
+    font-style: italic;
+}
+
+img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 4lh;
+    height: 4lh;
+}

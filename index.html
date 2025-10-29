@@ -6,100 +6,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="base.css">
   <title>mibers</title>
-
-  <style>
-    :root {
-      --background: #1E222A;
-      --foreground: #D8DEE9;
-      --accent-soft: #b48ead;
-      --accent: #88C0D0;
-      --accent-strong: #81A1C1;
-      --highlight: #A3BE8C;
-      --warning: #EBCB8B;
-      --border: var(--accent-strong);
-    }
-
-    @font-face { font-family: IosevkaSS14; src: url('IosevkaSS14.ttf'); } 
-
-    body {
-      background: var(--background);
-      color: var(--foreground);
-      font-family: IosevkaSS14;
-      padding: 1ch;
-      margin-top: 0ch;
-    }
-
-    a {
-      color: var(--accent-soft);
-    }
-
-    a:hover {
-      color: var(--highlight);
-    }
-
-    h1 {
-      color: var(--accent);
-      margin-top: 0lh;
-      margin-bottom: 0lh;
-      text-decoration: underline;
-    }
-
-    h2 {
-      color: var(--accent);
-      margin-top: 0.25lh;
-      margin-bottom: -0.25lh;
-    }
-
-    h3 {
-      color: var(--warning);
-      margin-top: 0lh;
-      margin-bottom: 0lh;
-    }
-
-    p,
-    ul {
-      margin-top: 0.5lh;
-      margin-bottom: 0lh;
-      max-width: 60ch;
-      line-height: 110%;
-    }
-
-    ul {
-      margin-left: -1ch;
-    }
-
-    p {
-      margin-top: 0.5lh;
-      margin-bottom: 0.5lh;
-    }
-
-    ul li::marker {
-      color: var(--accent-strong);
-      content: "-> ";
-    }
-
-    .label {
-      color: var(--warning);
-      font-weight: bold;
-    }
-
-    .extra-info {
-      color: var(--accent-strong);
-      font-style: italic;
-    }
-
-    .email {
-      color: var(--accent-strong);
-      margin-top: 0.2lh;
-      margin-bottom: -0.2lh;
-      font-style: italic;
-    }
-  </style>
 </head>
 
-<body>
-  <h1>mibers</h1>
+<html>
+  <h1><img src="assets/favicon.png">mibers</h1>
   <p class="email">(its@mibers.uk)</p>
   <p>
     <a href="https://en.pronouns.page/@mibers" target="_blank">she/her</a>,
@@ -161,7 +73,14 @@
   <ul>
     <li><span class="label">Music:</span> Rap, Neo-Soul, RnB, Hip-hop</li>
     <li><span class="label">Cartoons:</span> Adventure Time, Regular Show, We Bare Bears</li>
-    <li><span class="label">Videogames:</span> Minecraft, Terraria, Bloons, Brawlhalla, THE FINALS, Balatro</li>
+    <li><span class="label">Videogames:</span> Minecraft, Terraria, Bloons, Brawlhalla, Hollow Knight, Balatro</li>
+  </ul>
+
+  <h2>Blogs:</h2>
+  <ul>
+    <li><a href="file:blogs/blog-1.html">blog-1</a></li>
+    <li><a href="file:blogs/blog-2.html">blog-2</a></li>
+    <li><a href="file:blogs/blog-3.html">blog-3</a></li>
   </ul>
 
 </body>
