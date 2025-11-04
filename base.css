@@ -1,6 +1,7 @@
 :root {
     --background: #1E222AF9;
     --foreground: #D8DEE9;
+    --gray: #b2b5d4;
     --accent-soft: #b48ead;
     --accent: #88C0D0;
     --accent-strong: #81A1C1;
@@ -94,13 +95,26 @@ ul li::marker {
 .extra-info {
     color: var(--accent-strong);
     font-style: italic;
-}
-
-.email {
-    color: var(--accent-strong);
     margin-top: 0.2lh;
     margin-bottom: -0.2lh;
+}
+
+.inline-info {
     font-style: italic;
+    color: var(--gray);
+}
+
+.container {
+    padding: 1lh;
+    display: flex;
+    gap: 1ch;
+    max-width: 50ch;
+}
+
+.item {
+    border: solid;
+    border-color: #81A1C1;
+    border-width: 1ch;
 }
 
 img {
