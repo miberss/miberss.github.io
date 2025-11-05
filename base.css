@@ -105,9 +105,9 @@ ul li::marker {
 }
 
 .container {
-    padding: 1ch;
-    grid-template-columns: auto auto auto;
     display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 1ch;
     gap: 2ch;
     width: 50ch;
     /* background-color: #81A1C15f; */
@@ -124,6 +124,10 @@ ul li::marker {
     padding-right: 0.5ch;
     width: 15ch;
     background-color: #3b346d2b;
+    overflow: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .item:hover {
