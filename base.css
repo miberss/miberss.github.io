@@ -105,16 +105,30 @@ ul li::marker {
 }
 
 .container {
-    padding: 1lh;
-    display: flex;
-    gap: 1ch;
-    max-width: 50ch;
+    padding: 1ch;
+    grid-template-columns: auto auto auto;
+    display: grid;
+    gap: 2ch;
+    width: 50ch;
+    /* background-color: #81A1C15f; */
 }
 
 .item {
     border: solid;
-    border-color: #81A1C1;
-    border-width: 1ch;
+    border-radius: 0.5ch;
+    border-color: #81a1c1A0;
+    border-width: 0.75ch;
+    padding-top: 0.5ch;
+    padding-bottom: 1ch;
+    padding-left: 0.5ch;
+    padding-right: 0.5ch;
+    width: 15ch;
+    background-color: #3b346d2b;
+}
+
+.item:hover {
+    border-color: #81a1c1F0;
+    background-color: #24445766;
 }
 
 img {
