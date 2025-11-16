@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/mibers_image.png">
+  <link rel="stylesheet" href="../base.css">
+  <title>Skript is superior... sadly. | mibers</title>
+</head>
+
+<body>
+  <h2><a href="../index.html"><- go back</a></h2>
+  <h1>Skript is superior... sadly.</h1>
+  <p>
+    I tried coding in Kotlin for a tiny bit to work on a thought of a Minecraft project but.. Man is it exhausting.
+  </p><p>
+    I will eventually be able to switch from Skript as my main work language, but its genuinely one of the most amazing things I've used in a while. It's so extremely nice to get something going and there's <em>not a single scripting language</em> that can replicate the feel for me. You can do so much with so little, and having the base of just Minecraft being Minecraft makes it unreplicatable for me. Minecraft is a naturally creative game and being able to expand on it and restrict things... with extremely readable natural language too. <em>Its amazing.</em>
+  </p><h3>
+    Who designed IntelliJ?
+  </h3><p>
+    And why is it the only viable option for JVM development... I feel like IntelliJ just sucks. The buttons are either too small or too big, there's a thousand popups, context menus have 15 features you would never need. I mean sure, maybe some features <em>are</em> helpful, but why am I not allowed to use my own choice of IDE, why does a language server and documentation have to be blocked off by a proprietary piece of software that shoves AI into your face at all times.
+  </p><p>
+    I miss when writing code felt fun and I didn't have to think about an AI trying to backseat a decision I'm making. It gives no proper reasoning for the decision, It justifies it blindly because it's a robot that doesn't know anything. I just want to use my minimalist open-source IDE that I've customized for <em>my liking.</em>
+  </p><p>
+    It's strange, this world we live in. Anyways rant about AI over, it should go in a different blog.
+  </p><h3>
+    Skript is awesome, I swear!
+  </h3><p>
+    This is what Skript looks like for anyone uninformed.
+  </p><code>
+    <em>1</em> on join:
+    <br><em>2</em> &nbsp;send <span class="str">"Hello, world!"</span> to the player
+    <br><em>3</em> &nbsp;add <span class="num">1</span> to <span class="lvar">{_variable}</span>
+  </code><p>
+    Syntax is based on expressions, effect and nodes <em>(and a few others...)</em>, which are used together to create a natural looking language. The features arn't that developed, there's <em>no</em> OOP, there's <em>near zero</em> functional support, there's not even <em>a officially supported lambda</em>, but if you want to do anything in Minecraft, Skript can do it with nicely made statements.
+  </p><p>
+    The allowed verbosity of Skript is something that also lures me in personally. I can be as inexplicit and explicit as I would like, expression syntax often allows for optional words that make your sentences make sense.
+  </p><code>
+    [all [[of] the]|the] [server] [non(-| )]op[erator]s
+  </code><p>
+    Take this syntax pattern for example. This probably makes zero sense if you have never seen Skript before, but bare with me. <em>[word]</em> means an optional; none or the syntax, <em>(x|y)</em> means a option between two syntaxes and <em>[x|y]</em> means none, or an option between the two syntaxes. This should now allow you to read the syntax above
+  </p><p>
+    This <em>could be:</em>
+  </p><code>
+    all of the server operators
+  </code><p>
+    or... <em>it could be:</em>
+  </p><code>
+    ops
+  </code><p>
+    Do you understand how <em>great</em> that is?, both express it perfectly well, but you can use filler words to just, make it make more sense. 
+  </p><p>
+    The fact that Skript is a DSL <em>(Domain Specific Language)</em> makes it so much nicer to work with specifically Minecraft ideas. No strict typing, automatic conversions, inferring values. It really is awesome.
+  </p><h3>
+    Skript's community is... kinda all children.
+  </h3><p>
+    Skript has one drawback however. The community is... not good at programming. At all. <em>(and is not willing to learn)</em>
+  </p><code>
+    <em>1</em> if all:
+    <br><em>2</em> &nbsp;all numbers between <span class="num">-0.9</span> and <span class="num">0.9</span> contains distance between player and target block
+    <br><em>3</em> &nbsp;all numbers between <span class="num">-0.9</span> and <span class="num">0.9</span> contains distance between player and block infront of player ~ vector(<span class="num">0</span>, <span class="num">1</span>, <span class="num">0</span>)
+    <br><em>4</em> then:
+  </code><p>
+    This is real code, made by a real Skript developer.
+  </p><p>
+    What are we even doing at this point. The problem with Skript is that it has the capabilities to create libraries and wrappers and more advanced things but we don't have the community that would actually do cool things with it.
+  </p><p>
+    Another thing that really stunt Skript's growth within developer communities is that every Minecraft developer has a precondition to automatically disregard anything Skript because of "Performance". This is ridiculous. Yes, if you write bad code, the performance <em>will</em> be bad. The community is filled with most people having Skript as their first programming language, therefore, most examples will have bad code, leading to bad performance... <em>duh...</em>
+  </p><h3>
+    Skript doesn't need to be fast, actually.
+  </h3><p>
+    There is an unreasonable need for performance nowadays, even when performance isn't an issue, like at all.
+    Alot of people will ask the question in the Skript community, "Is my code fast? %insert code%". First of all, you should evaluate whether your code <em>needs</em> to be fast, if you have a command that sends a chat message, think, would a help command heavily impact your server in any way? I heavily doubt it. Second, <em>TEST IT!</em>. If it works and doesn't raise MSPT <em>(milliseconds per tick)</em> then you shouldn't think about it, and if you can do it 1000 times in a tick without raising MSPT, then you should <em>really</em> not think about it.
+  </p><p>
+    Most Minecraft based things will generally be bound with how fast the Java code is going, you will only face lag if you don't understand how to abstract problems. Do you need to loop all the blocks within a chunk to check whether a chunk has a block in it, or can you just save the location of the block and check it that way?
+  </p><p>
+    Not using the whole of Skript is also another pitfall people fall into. I see alot of people extracting the axis' of vectors and doing math on them like Skript doesn't have a perfectly good vector implementation that can do whatever you would want... Why are you even using a vector if you arn't doing operations with them.
+  </p><h3>
+    Overall... 
+  </h3><p>
+    I think there's alot of great about Skript and it gets misrepresented by a bad side of the community who desperately have zero idea what they are doing. The rise of AI doing anything you want <em>(even if it's absolutely awful at Skript)</em> and the fact that Minecraft is the domain definitely helps.
+  </p><p>
+    Thanks for reading, I don't write often and this was a nice way of getting some ideas out of me I've had for a while.
+  </p><p>
+    Hopefully the next blog will be less about me being frustrated, and more development focused.
+  </p>
+  <h2><a href="../index.html"><- go back</a> | <a href="#top">go up ^</a></h2>
+  <div class="bg"></div>
+</body>

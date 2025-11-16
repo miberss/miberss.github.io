@@ -1,5 +1,6 @@
 :root {
     --background: #1E222AF9;
+    --dark-code: #12151a;
     --foreground: #D8DEE9;
     --gray: #b2b5d4;
     --accent-soft: #b48ead;
@@ -8,6 +9,7 @@
     --highlight: #A3BE8C;
     --warning: #EBCB8B;
     --border: var(--accent-strong);
+    --right-border: 60ch
 }
 
 @font-face { font-family: IosevkaSS14; src: url('assets/IosevkaSS14.ttf'); } 
@@ -69,8 +71,8 @@ p,
 ul {
     margin-top: 0.5lh;
     margin-bottom: 0lh;
-    max-width: 60ch;
-    line-height: 110%;
+    max-width: var(--right-border);
+    line-height: 115%;
 }
 
 ul {
@@ -99,40 +101,51 @@ ul li::marker {
     margin-bottom: -0.2lh;
 }
 
-.inline-info {
+em {
     font-style: italic;
     color: var(--gray);
 }
 
 .container {
     display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 1ch;
-    gap: 2ch;
-    width: 50ch;
-    /* background-color: #81A1C15f; */
+    grid-template-columns: auto auto;
+    padding-top: 1lh;
+    gap: 2.5ch;
+    width: var(--right-border);
 }
 
 .item {
-    border: solid;
-    border-radius: 0.5ch;
-    border-color: #81a1c1A0;
-    border-width: 0.75ch;
-    padding-top: 0.5ch;
-    padding-bottom: 1ch;
-    padding-left: 0.5ch;
-    padding-right: 0.5ch;
-    width: 15ch;
-    background-color: #3b346d2b;
-    overflow: auto;
-    text-align: center;
+    padding: 1ch;
+    width: 25ch;
+    background-color: #b48ead15;
+    overflow:visible;
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
+}
+
+code {
+    background-image: url(assets/pattern.png);
+    background-repeat: unset;
+    background-blend-mode:color;
+    display: block;
+    width: 50ch
+}
+
+.str {
+    color: #A3BE8C;
+}
+
+.num {
+    color: #EBCB8B;
+}
+
+.lvar {
+    font-style: italic;
+    color: #81A1C1;
 }
 
 .item:hover {
-    border-color: #81a1c1F0;
-    background-color: #24445766;
+    background-color: #a3be8c70;
 }
 
 img {
