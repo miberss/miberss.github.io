@@ -70,6 +70,7 @@
     .viz { display: flex; flex-direction: column; gap: 0.35lh; }
     .code { color: var(--accent-strong); font-size: 0.78em; font-style: italic; }
     .line { font-size: 0.85em; }
+    img.display { width: 100%; display: block; }
     .str { color: var(--highlight); }
     .num { color: var(--warning); }
     .lvar { font-style: italic; color: var(--accent-strong); }
@@ -80,17 +81,11 @@
     .ramp.thin div { height: 1lh; }
     .bars { align-items: flex-end; height: 4lh; }
     .bars div { flex: 1; background: var(--accent); }
-    .bars.mini { height: 2.5lh; }
-
-    .sparks { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75ch 1.5ch; }
-    .spark .code { display: block; margin-bottom: 2px; }
 
     .cells { display: grid; grid-template-columns: repeat(26, 1fr); gap: 2px; }
     .cells div { aspect-ratio: 1; background: var(--dark-code); }
     .cells28 { display: grid; grid-template-columns: repeat(28, 1fr); gap: 2px; }
     .cells28 div { aspect-ratio: 1; background: var(--dark-code); }
-    .chest { display: grid; grid-template-columns: repeat(18, 1fr); gap: 2px; }
-    .chest div { aspect-ratio: 1; background: var(--dark-code); }
 
     .chips span { position: absolute; left: 4px; bottom: 2px; font-size: 0.6em; }
     .chips div { position: relative; }
@@ -169,11 +164,8 @@
 
     <div class="item">
       <h3><a href="https://github.com/miberss/easking">easking</a> <em>easing functions</em></h3>
-      <div class="viz sparks">
-        <div class="spark"><span class="code">ease_out_quad(p)</span><div class="bars mini" id="ea-1"></div></div>
-        <div class="spark"><span class="code">ease_in_out_cubic(p)</span><div class="bars mini" id="ea-2"></div></div>
-        <div class="spark"><span class="code">ease_in_quart(p)</span><div class="bars mini" id="ea-3"></div></div>
-        <div class="spark"><span class="code">ease_out_quint(p)</span><div class="bars mini" id="ea-4"></div></div>
+      <div class="viz">
+        <img class="display" src="easking.png" alt="easking">
       </div>
       <span class="install">/package install github.com/miberss/easking</span>
     </div>
@@ -187,27 +179,6 @@
         <p class="line">http_post · http_put · http_delete · webhooks</p>
       </div>
       <span class="install">/package install github.com/miberss/skttp</span>
-    </div>
-
-    <div class="item">
-      <h3><a href="https://github.com/miberss/hyde">hyde</a> <em>command allowlisting</em></h3>
-      <div class="viz">
-        <p class="line">hyde_allow(<span class="str">"spawn"</span>, <span class="str">"home"</span>, <span class="str">"sethome"</span>)</p>
-        <p class="line">/spawn → <span class="str">runs</span></p>
-        <p class="line">/plugins → <span class="off">cancelled</span></p>
-        <p class="line">tab-complete only shows the allowed list</p>
-      </div>
-      <span class="install">/package install github.com/miberss/hyde</span>
-    </div>
-
-    <div class="item">
-      <h3><a href="https://github.com/miberss/pacskage-browser">pacskage-browser</a> <em>in-game package browser</em></h3>
-      <div class="viz">
-        <span class="code">/package browser</span>
-        <div class="chest" id="pb-grid"></div>
-        <span class="code">every github repo tagged `pacskage`, click to install</span>
-      </div>
-      <span class="install">/package install github.com/miberss/pacskage-browser</span>
     </div>
 
   </div>
@@ -294,12 +265,6 @@
       block(document.getElementById('tw-col'), oklabToRgb(...LA.map((v, j) => v + (LB[j] - v) * t)));
     }
 
-    // easking
-    bars('ea-1', t => 1 - (1 - t) * (1 - t), 16);
-    bars('ea-2', easeInOut, 16);
-    bars('ea-3', t => t * t * t * t, 16);
-    bars('ea-4', t => 1 - Math.pow(1 - t, 5), 16);
-
     // aabb
     const gW = 26, gH = 11, ag = document.getElementById('ab-grid');
     const boxA = { x1: 3, y1: 2, x2: 13, y2: 8 }, boxB = { x1: 10, y1: 4, x2: 22, y2: 10 };
@@ -324,14 +289,6 @@
       sg.appendChild(d);
     }
 
-    // pacskage-browser chest
-    const pb = document.getElementById('pb-grid');
-    const items = { 1: '--accent', 3: '--warning', 4: '--highlight', 7: '--accent-soft', 9: '--accent-strong', 12: '--orange', 14: '--accent', 20: '--highlight', 23: '--warning' };
-    for (let i = 0; i < 54; i++) {
-      const d = document.createElement('div');
-      if (items[i]) d.style.background = `var(${items[i]})`;
-      pb.appendChild(d);
-    }
   </script>
 </body>
 
