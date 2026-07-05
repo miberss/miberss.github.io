@@ -30,6 +30,7 @@
       background: var(--background);
       color: var(--foreground);
       font-family: IosevkaSS14, monospace;
+      font-size: 20px;
       padding: 1ch;
       margin-top: 1ch;
     }
@@ -67,7 +68,7 @@
     h3 a:hover { color: var(--highlight); text-decoration: underline; }
     h3 em { color: var(--gray); font-style: italic; font-weight: normal; font-size: 0.8em; }
 
-    .viz { display: flex; flex-direction: column; gap: 0.35lh; }
+    .viz { display: flex; flex-direction: column; gap: 0.35lh; flex: 1; justify-content: space-evenly; }
     .code { color: var(--accent-strong); font-size: 0.78em; font-style: italic; }
     .line { font-size: 0.85em; }
     img.display { width: 100%; display: block; }
@@ -77,9 +78,9 @@
     .off { color: var(--orange); }
 
     .ramp, .bars { display: flex; gap: 2px; }
-    .ramp div { flex: 1; height: 2.2lh; }
+    .ramp div { flex: 1; height: 2.6lh; }
     .ramp.thin div { height: 1lh; }
-    .bars { align-items: flex-end; height: 4lh; }
+    .bars { align-items: flex-end; height: 5lh; }
     .bars div { flex: 1; background: var(--accent); }
 
     .cells { display: grid; grid-template-columns: repeat(26, 1fr); gap: 2px; }
