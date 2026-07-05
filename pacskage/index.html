@@ -45,14 +45,35 @@
     .sub { color: var(--gray); margin: 0.25lh 0 0; }
     .sub code { color: var(--warning); }
 
+    .page { display: flex; gap: 2.5ch; align-items: flex-start; max-width: 130ch; }
+    .left { width: 52ch; flex-shrink: 0; position: sticky; top: 1ch; }
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 1.5ch;
-      max-width: 120ch;
-      margin-top: 1lh;
+      flex: 1;
+      min-width: 0;
     }
-    @media (max-width: 100ch) { .grid { grid-template-columns: 1fr; } }
+    @media (max-width: 110ch) {
+      .page { flex-direction: column; }
+      .left { width: auto; position: static; }
+    }
+
+    h2 { color: var(--accent); margin: 0.75lh 0 0.25lh; font-size: 1.1em; }
+    pre {
+      background: var(--dark-code);
+      padding: 0.75ch 1ch;
+      margin: 0.25lh 0;
+      font-family: inherit;
+      font-size: 0.8em;
+      overflow-x: auto;
+    }
+    pre .k { color: var(--accent-strong); }
+    .left p, .left li { font-size: 0.85em; line-height: 130%; }
+    .left p { margin: 0.35lh 0; max-width: 52ch; }
+    .left ul { margin: 0.35lh 0 0 -1ch; }
+    .left li::marker { color: var(--accent-strong); content: "-> "; }
+    .left code { color: var(--warning); }
 
     .item {
       background: #b48ead15;
@@ -105,10 +126,35 @@
 </head>
 
 <body>
-  <h1><a href="https://github.com/miberss/pacskage">pacskage</a></h1>
-  <p class="sub">a tiny package manager for Skript, <code>/package install &lt;github url&gt;</code></p>
+  <div class="page">
+    <div class="left">
+      <h1><a href="https://github.com/miberss/pacskage">pacskage</a></h1>
+      <p class="sub">a tiny package manager for <a href="https://github.com/SkriptLang/Skript">Skript</a>, requires skript-reflect</p>
 
-  <div class="grid">
+      <h2>Install:</h2>
+      <pre>curl -o plugins/Skript/scripts/package.sk
+  https://raw.githubusercontent.com/miberss/pacskage/HEAD/package.sk</pre>
+
+      <h2>Use:</h2>
+      <pre>/package install &lt;git url&gt;[@version]
+/package (update|remove|enable|disable|info) &lt;name&gt;
+/package (list|check|outdated|browser|selfupdate|awesome)</pre>
+      <p>packages are installed into <code>scripts/packages/</code> &mdash;
+        browse <a href="https://github.com/miberss/awesome-pacskage">awesome-pacskage</a>
+        or run <code>/package browser</code> for an in-game GUI.
+        append <code>@version</code> to pin a tag, branch, or commit.</p>
+
+      <h2>Manifest:</h2>
+      <pre><span class="k">name:</span> my-package
+<span class="k">version:</span> 1.0.0
+<span class="k">description:</span> what it does
+<span class="k">requires:</span> skript >= 2.15, skript-reflect >= 2.6
+<span class="k">packages:</span> https://github.com/someone/other-package</pre>
+      <p>all fields optional, see
+        <a href="https://github.com/miberss/pacskage-example">pacskage-example</a>.</p>
+    </div>
+
+    <div class="grid">
 
     <div class="item">
       <h3><a href="https://github.com/miberss/skolor">skolor</a> <em>hsl · hsv · oklab</em></h3>
@@ -182,6 +228,7 @@
       <span class="install">/package install github.com/miberss/skttp</span>
     </div>
 
+    </div>
   </div>
 
   <footer>&copy 2026 Willow Conran <a href="/">mibers.uk</a></footer>
