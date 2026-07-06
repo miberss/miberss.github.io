@@ -121,6 +121,20 @@
 
     .install { margin-top: auto; color: var(--accent-soft); font-size: 0.85em; }
 
+    .copyable { display: flex; align-items: stretch; gap: 0.5ch; margin: 0.25lh 0; }
+    .copyable pre { flex: 1; min-width: 0; margin: 0; }
+    .copy {
+      flex-shrink: 0;
+      background: var(--dark-code);
+      border: none;
+      color: var(--accent-strong);
+      font-family: inherit;
+      font-size: 0.8em;
+      padding: 0 1ch;
+      cursor: pointer;
+    }
+    .copy:hover { color: var(--highlight); }
+
     footer { margin-top: 1lh; color: var(--gray); font-size: 0.85em; }
   </style>
 </head>
@@ -132,14 +146,13 @@
       <p class="sub">a tiny package manager for <a href="https://github.com/SkriptLang/Skript">Skript</a>, requires skript-reflect</p>
 
       <h2>Install:</h2>
-      <pre>curl -o plugins/Skript/scripts/package.sk
-  https://raw.githubusercontent.com/miberss/pacskage/HEAD/package.sk</pre>
+      <div class="copyable"><pre>curl -o package.sk https://raw.githubusercontent.com/miberss/pacskage/HEAD/package.sk</pre><button class="copy" aria-label="copy install command">copy</button></div>
 
       <h2>Use:</h2>
       <pre>/package install &lt;git url&gt;[@version]
 /package (update|remove|enable|disable|info) &lt;name&gt;
 /package (list|check|outdated|browser|selfupdate|awesome)</pre>
-      <p>packages are installed into <code>scripts/packages/</code> &mdash;
+      <p>packages are installed into <code>scripts/packages/</code>.
         browse <a href="https://github.com/miberss/awesome-pacskage">awesome-pacskage</a>
         or run <code>/package browser</code> for an in-game GUI.
         append <code>@version</code> to pin a tag, branch, or commit.</p>
@@ -336,6 +349,16 @@
       if (lit.has(i)) d.style.background = i >= DAYS - 12 ? 'var(--orange)' : 'var(--warning)';
       sg.appendChild(d);
     }
+
+    // copy buttons
+    document.querySelectorAll('.copyable').forEach(box => {
+      const btn = box.querySelector('.copy');
+      btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(box.querySelector('pre').textContent.trim());
+        btn.textContent = 'copied';
+        setTimeout(() => { btn.textContent = 'copy'; }, 1200);
+      });
+    });
 
   </script>
 </body>
